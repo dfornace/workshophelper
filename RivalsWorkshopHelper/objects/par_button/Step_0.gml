@@ -1,6 +1,7 @@
 /// @description Call user0 when clicked
 if (visible){
-	if (mouse_x >= x && mouse_x <= x+sprite_width && mouse_y >= y && mouse_y <= y+sprite_height){
+	depth = -100;
+	if (mouse_x >= min(x,x+sprite_width) && mouse_x < max(x,x+sprite_width) && mouse_y >= y && mouse_y <= y+sprite_height){
 		if (mouse_check_button_pressed(mb_left)){
 			clicked = true;
 		}

@@ -27,11 +27,13 @@ for (var hitbox_index = 0; hitbox_index < max_num_hitboxes; hitbox_index++){
 		hitbox_list_y += 44;
 	} else {
 		var hbox = ds_list_find_value(hitbox_list, hitbox_index);
+		var hbox_x = hbox.x - origin_x;
+		var hbox_y = hbox.y - origin_y;
 		draw_set_color(c_ltgray);
 		if (hitbox_index == hover_hitbox){
 			draw_set_color(c_white);
 		}
-		draw_text(left_start+32, hitbox_list_y, "x: " + string(hbox.x) + " y: " + string(hbox.y) + " w: " + string(hbox.w) + " h: " + string(hbox.h));
+		draw_text(left_start+32, hitbox_list_y, "x: " + string(hbox_x) + " y: " + string(hbox_y) + " w: " + string(hbox.w) + " h: " + string(hbox.h));
 		draw_set_color(c_white);
 		hitbox_list_y += 22;
 	}
@@ -49,8 +51,8 @@ if (current_sprite != -1){
 	var img_center_x = (img_left+img_right)*.5+pan_x*zoom;
 	var img_center_y = (img_top+img_bottom)*.5+pan_y*zoom;
 	draw_sprite_ext(current_sprite, current_image, img_center_x, img_center_y, zoom, zoom, 0, c_white, 1);
+	if (current_hurtbox != -1){
+		draw_sprite_ext(current_hurtbox, current_image, img_center_x, img_center_y, zoom, zoom, 0, c_white, .5);
+	}
 	draw_sprite_ext(origin_spr, 0, relative_x(origin_x), relative_y(origin_y), zoom, zoom, 0, c_white, 1);
-	/*for (var i = 0; i < ds_list_size(hitbox_list); i++){
-		draw_sprite_ext(
-	}*/
 }

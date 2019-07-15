@@ -31,7 +31,7 @@ if (mouse_check_button(mb_middle)){
 }
 
 //SETTING THE ORIGIN
-if (mouse_check_button(mb_right) && current_sprite != -1){
+if (mouse_check_button(mb_right) && current_sprite != -1 && origin_locked == 0){
 	if (mouse_x >= img_left && mouse_x <= img_right && mouse_y >= img_top && mouse_y <= img_bottom){
 		origin_x = screen_to_img_x(mouse_x);
 		origin_y = screen_to_img_y(mouse_y);
@@ -48,6 +48,8 @@ if (mouse_x > room_width-sidebar_w+side_margin && mouse_y > hitbox_list_top){
 		if (hitbox_index == selected_hitbox) hitbox_list_h = 44;
 		if (mouse_y < hitbox_list_y + hitbox_list_h){
 			hover_hitbox = hitbox_index;
+			var hover_hitbox_obj = ds_list_find_value(hitbox_list, hover_hitbox);
+			hover_hitbox_obj.hovering = true;
 			break;
 		}
 		hitbox_list_y += hitbox_list_h;
@@ -137,7 +139,10 @@ if (selected_hitbox != -1){
 	vis_but.y = top_margin+164+selected_hitbox*22;
 	shape_but.visible = true;
 	shape_but.y = top_margin+164+selected_hitbox*22;
+	del_but.visible = true;
+	del_but.y = top_margin+164+selected_hitbox*22;
 } else {
 	vis_but.visible = false;
 	shape_but.visible = false;
+	del_but.visible = false;
 }

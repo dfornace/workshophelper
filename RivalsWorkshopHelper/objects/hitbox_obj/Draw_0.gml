@@ -3,6 +3,11 @@
 if (vis != 2){
 	var hitbox_alpha = .5 - .4*vis;
 	draw_sprite_ext(shape_sprites[shape], 0, relative_x(x), relative_y(y), (w/200)*main_obj.zoom, (h/200)*main_obj.zoom, 0, c_white, hitbox_alpha);
+	if (hovering){
+		gpu_set_fog(true, c_white, 0, 0);
+		draw_sprite_ext(shape_sprites[shape], 0, relative_x(x), relative_y(y), (w/200)*main_obj.zoom, (h/200)*main_obj.zoom, 0, c_white, .25);
+		gpu_set_fog(false, c_black, 0, 0);
+	}
 	//resize boxes
 	if (ds_list_find_value(main_obj.hitbox_list, main_obj.selected_hitbox) == id){
 		for (var i = -1; i < 2; i++){
