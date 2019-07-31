@@ -113,15 +113,15 @@ if (mouse_check_button(mb_left)){
 			current_hitbox.w = floor(hitbox_start_w - (mouse_x - resize_mouse_x)/zoom);
 			current_hitbox.x = floor(hitbox_start_x + (mouse_x - resize_mouse_x)*.5/zoom);
 		}
-		if (current_hitbox.selected_resize_dot[0] == 1){ //moving a left side dot
+		if (current_hitbox.selected_resize_dot[0] == 1){ //moving a right side dot
 			current_hitbox.w = floor(hitbox_start_w + (mouse_x - resize_mouse_x)/zoom);
 			current_hitbox.x = floor(hitbox_start_x + (mouse_x - resize_mouse_x)*.5/zoom);
 		}
-		if (current_hitbox.selected_resize_dot[1] == -1){ //moving a left side dot
+		if (current_hitbox.selected_resize_dot[1] == -1){ //moving a up side dot
 			current_hitbox.h = floor(hitbox_start_h - (mouse_y - resize_mouse_y)/zoom);
 			current_hitbox.y = floor(hitbox_start_y + (mouse_y - resize_mouse_y)*.5/zoom);
 		}
-		if (current_hitbox.selected_resize_dot[1] == 1){ //moving a left side dot
+		if (current_hitbox.selected_resize_dot[1] == 1){ //moving a down side dot
 			current_hitbox.h = floor(hitbox_start_h + (mouse_y - resize_mouse_y)/zoom);
 			current_hitbox.y = floor(hitbox_start_y + (mouse_y - resize_mouse_y)*.5/zoom);
 		}

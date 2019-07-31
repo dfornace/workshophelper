@@ -54,5 +54,6 @@ if (current_sprite != -1){
 	if (current_hurtbox != -1){
 		draw_sprite_ext(current_hurtbox, current_image, img_center_x, img_center_y, zoom, zoom, 0, c_white, .5);
 	}
+	//draw_surface_ext(hitbox_surface, 
 	draw_sprite_ext(origin_spr, 0, relative_x(origin_x), relative_y(origin_y), zoom, zoom, 0, c_white, 1);
 }

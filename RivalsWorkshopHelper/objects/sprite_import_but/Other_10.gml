@@ -16,6 +16,9 @@ if (sprite_file != ""){
 		pan_x = -sprite_get_width(main_obj.current_sprite)*.5;
 		pan_y = -sprite_get_height(main_obj.current_sprite)*.5
 		main_obj.sprite_filename = sprite_file;
+		main_obj.origin_locked = false;
+		main_obj.first_image = 0;
+		main_obj.current_image = 0;
 	} else if (type == "hurtbox"){
 		main_obj.current_hurtbox = sprite_add(full_filename, num_frames, 0, 0, 0, 0);
 	}

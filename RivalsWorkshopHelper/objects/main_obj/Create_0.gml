@@ -37,6 +37,7 @@ img_right = room_width - sidebar_w - 8;
 img_top = preview_height + 8;
 img_bottom = room_height - 8;
 img_line_w = 3;
+hitbox_surface = surface_create(room_width, room_height);
 
 //colors
 light_color = make_color_rgb(80, 80, 80);
